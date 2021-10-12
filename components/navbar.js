@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
 const Navigation = styled.nav`
+  z-index: 10;
   position: fixed;
   top: 0;
   min-width: 100%;
