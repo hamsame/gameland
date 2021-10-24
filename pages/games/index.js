@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import styled from 'styled-components'
@@ -43,6 +43,7 @@ export const getStaticProps = async () => {
 }
 
 const Games = ({ games }) => {
+  console.log(games)
   return (
     <>
       <Head>
@@ -53,16 +54,7 @@ const Games = ({ games }) => {
       <Heading2>All Games</Heading2>
       <Grid cols='3'>
         {games.slice(299, 365).map((game) => {
-          const {
-            id,
-            title,
-            thumbnail,
-            short_description,
-            game_url,
-            genre,
-            platform,
-            release_date,
-          } = game
+          const { id, title, thumbnail, short_description } = game
 
           return (
             <Game className='game' key={id}>

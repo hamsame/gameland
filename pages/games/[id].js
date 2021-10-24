@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 
 export const getStaticPaths = async () => {
   const res = await fetch('https://www.freetogame.com/api/games')
@@ -31,26 +32,48 @@ const Game = ({ game }) => {
     id,
     title,
     thumbnail,
+    description,
     short_description,
     game_url,
-    genre,
+    screenshots,
     platform,
-    release_date,
   } = game
 
   return (
-    <div key={id} style={{ margin: '9.5%' }}>
-      <img src={thumbnail} alt={`Image of ${title} game`} />
-      <h2>{title}</h2>
-      <p>
-        {short_description} Available on {platform}
-      </p>
-      <b>Genre: {genre}</b>
-      <br />
-      <Link href={'/games'}>
-        <p style={{ color: 'blue', marginLeft: '5%' }}>All games</p>
-      </Link>
-    </div>
+    <>
+      <Head>
+        <title>Gamerland | {title}</title>
+        <meta name='description' content={short_description} />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+      <div key={id} style={{ margin: '9.5%' }}>
+        <img
+          style={{ width: '60%' }}
+          src={thumbnail}
+          alt={`Image of ${title} game`}
+        />
+        <br />
+        {screenshots.map((img) => (
+          <img
+            style={{ width: '30%', margin: '3vh 2% 0 0%' }}
+            src={img.image}
+            key={img.id}
+            alt={`Screenshot of ${title} game`}
+          />
+        ))}
+        <h2 style={{ marginLeft: '2%' }}>
+          <a href={game_url}>{title}</a>
+        </h2>
+        <p style={{ lineHeight: '2' }}>
+          {description} <br />
+          <br /> Available on {platform}
+        </p>
+        <br />
+        <Link href={'/games'}>
+          <a style={{ color: 'blue', marginLeft: '2%' }}>Go Back</a>
+        </Link>
+      </div>
+    </>
   )
 }
 

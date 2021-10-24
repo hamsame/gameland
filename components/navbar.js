@@ -1,36 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { Navigation, NavLinks, NavLink } from './styles'
 import styled from 'styled-components'
-
-const Navigation = styled.nav`
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  min-width: 100%;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #00005f;
-  padding: 0.3rem;
-`
-
-const NavLinks = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  gap: 15%;
-  list-style: none;
-  padding-top: 15px;
-`
-
-const NavLink = styled.li`
-  border-bottom: transparent solid 3px;
-  padding-bottom: 15px;
-  &:hover {
-    border-bottom: white solid 3px;
-  }
-`
 
 const Navbar = () => {
   const router = useRouter()
@@ -56,7 +28,9 @@ const Navbar = () => {
         </NavLink>
         <NavLink>
           <Link href='/'>
-            <a className={router.pathname == '/' ? 'activeLink' : ''}>Third</a>
+            <a className={router.pathname == '/search' ? 'activeLink' : ''}>
+              Search
+            </a>
           </Link>
         </NavLink>
       </NavLinks>
