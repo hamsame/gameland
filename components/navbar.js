@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Navigation, NavLinks, NavLink } from './styles'
-import styled from 'styled-components'
 
 const Navbar = () => {
   const router = useRouter()
@@ -27,9 +26,9 @@ const Navbar = () => {
           </Link>
         </NavLink>
         <NavLink>
-          <Link href='/'>
-            <a className={router.pathname == '/search' ? 'activeLink' : ''}>
-              Search
+          <Link href='/sign-up'>
+            <a className={router.pathname == '/sign-up' ? 'activeLink' : ''}>
+              Join
             </a>
           </Link>
         </NavLink>

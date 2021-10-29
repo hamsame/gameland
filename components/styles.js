@@ -25,6 +25,7 @@ export const NavLinks = styled.ul`
 export const NavLink = styled.li`
   border-bottom: transparent solid 3px;
   padding-bottom: 15px;
+  text-transform: capitalize;
   &:hover {
     border-bottom: white solid 3px;
   }
@@ -60,4 +61,16 @@ export const Game = styled.div`
 export const Heading2 = styled.h2`
   display: inline-block;
   margin: 3vh 1%;
+`
+
+// /games[id] page
+export const PageText = styled.p`
+  margin: 0 0 2vh 0%;
+  line-height: 2;
+`
+
+// Contact Page
+// Modal Message
+export const ModalMessage = styled.h5`
+  color: ${(props) => props.color};
 `

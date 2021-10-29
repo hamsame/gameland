@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import { PageText } from '../../components/styles'
 
 export const getStaticPaths = async () => {
   const res = await fetch('https://www.freetogame.com/api/games')
@@ -46,7 +47,7 @@ const Game = ({ game }) => {
         <meta name='description' content={short_description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div key={id} style={{ margin: '9.5%' }}>
+      <article key={id} style={{ margin: '9.5%' }}>
         <img
           style={{ width: '60%' }}
           src={thumbnail}
@@ -61,18 +62,17 @@ const Game = ({ game }) => {
             alt={`Screenshot of ${title} game`}
           />
         ))}
-        <h2 style={{ marginLeft: '2%' }}>
+        <h2>
           <a href={game_url}>{title}</a>
         </h2>
-        <p style={{ lineHeight: '2' }}>
+        <PageText>
           {description} <br />
           <br /> Available on {platform}
-        </p>
-        <br />
+        </PageText>
         <Link href={'/games'}>
-          <a style={{ color: 'blue', marginLeft: '2%' }}>Go Back</a>
+          <a style={{ color: 'blue', marginLeft: '0%' }}>Go Back</a>
         </Link>
-      </div>
+      </article>
     </>
   )
 }

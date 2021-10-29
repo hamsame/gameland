@@ -1,0 +1,39 @@
+/* form */
+.form {
+  width: 90%;
+  margin: 20vh auto 0;
+  font-size: 1.2rem;
+}
+
+/* div containing input and label elements */
+.formControl {
+  margin: 3vh 0;
+}
+
+.formControl label {
+  display: block;
+  padding: 4px;
+}
+
+.formControl input {
+  padding: 4px;
+  width: 50%;
+}
+
+.formBtn {
+  background: #00005f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  transform: scale(1);
+}
+
+.formBtn:hover {
+  transform: scale(1.1);
+  opacity: 0.95;
+}

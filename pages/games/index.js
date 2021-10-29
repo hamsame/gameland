@@ -43,7 +43,6 @@ export const getStaticProps = async () => {
 }
 
 const Games = ({ games }) => {
-  console.log(games)
   return (
     <>
       <Head>
