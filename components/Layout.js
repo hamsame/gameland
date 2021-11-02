@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <main style={{ marginTop: '15vh' }}>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

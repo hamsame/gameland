@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import { PageText } from '../../components/styles'
+import { PageText } from '../../components/styledComponents/gamePageStyles'
 
 export const getStaticPaths = async () => {
   const res = await fetch('https://www.freetogame.com/api/games')
@@ -28,7 +28,7 @@ export const getStaticProps = async (context) => {
   }
 }
 
-const Game = ({ game }) => {
+const GamePage = ({ game }) => {
   const {
     id,
     title,
@@ -77,4 +77,4 @@ const Game = ({ game }) => {
   )
 }
 
-export default Game
+export default GamePage

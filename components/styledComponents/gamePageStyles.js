@@ -1,37 +1,6 @@
 import styled from 'styled-components'
 
-// navbar styles
-export const Navigation = styled.nav`
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  min-width: 100%;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #00005f;
-  padding: 0.3rem;
-`
-
-export const NavLinks = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  gap: 15%;
-  list-style: none;
-  padding-top: 15px;
-`
-
-export const NavLink = styled.li`
-  border-bottom: transparent solid 3px;
-  padding-bottom: 15px;
-  text-transform: capitalize;
-  &:hover {
-    border-bottom: white solid 3px;
-  }
-`
-
-//   /games page styles
+// games page styles
 export const Grid = styled.div`
   width: 98%;
   margin: 0 auto;
@@ -67,10 +36,4 @@ export const Heading2 = styled.h2`
 export const PageText = styled.p`
   margin: 0 0 2vh 0%;
   line-height: 2;
-`
-
-// Contact Page
-// Modal Message
-export const ModalMessage = styled.h5`
-  color: ${(props) => props.color};
 `

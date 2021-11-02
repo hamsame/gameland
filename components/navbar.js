@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Navigation, NavLinks, NavLink } from './styles'
+import { Navigation, NavLinks, NavLink } from './styledComponents/navStyles'
 
 const Navbar = () => {
   const router = useRouter()
@@ -11,16 +11,22 @@ const Navbar = () => {
         <Link href='/'>GAMERLAND</Link>
       </h3>
       <NavLinks>
-        <NavLink>
+        {/* <NavLink>
           <Link href='/about'>
             <a className={router.pathname == '/about' ? 'activeLink' : ''}>
               About
             </a>
           </Link>
-        </NavLink>
+        </NavLink> */}
         <NavLink>
           <Link href='/games'>
-            <a className={router.pathname == '/games' ? 'activeLink' : ''}>
+            <a
+              className={
+                router.pathname == '/games' || router.pathname == '/games/[id]'
+                  ? 'activeLink'
+                  : ''
+              }
+            >
               Games
             </a>
           </Link>
