@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Join.module.css'
+import styles from '../styles/Signup.module.css'
 import Navbar from '../components/navbar'
 import { Modal } from '../components/modal'
 import React, { useState } from 'react'
@@ -9,6 +9,7 @@ const SignUp = () => {
     firstName: '',
     lastName: '',
     email: '',
+    message: '',
   })
   const [details, setDetails] = useState([])
   const [modal, setModal] = useState({
@@ -36,14 +37,14 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if ((person.firstName, person.lastName, person.email)) {
+    if ((person.firstName, person.lastName, person.email, person.message)) {
       const contactDetails = { ...person, id: new Date().getTime().toString() }
       setDetails([...details, contactDetails])
       showModal(
         `Thank you ${contactDetails.firstName} for signing up!`,
         '#00005f'
       )
-      setPerson({ firstName: '', lastName: '', email: '' })
+      setPerson({ firstName: '', lastName: '', email: '', message: '' })
     } else {
       showModal('Please fill in all the fields', 'red')
     }
@@ -52,7 +53,7 @@ const SignUp = () => {
   return (
     <>
       <Head>
-        <title>Gamerland</title>
+        <title>Gamerland | Sign up</title>
         <meta name='description' content='Gamerland- A website for gamers' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
@@ -60,7 +61,7 @@ const SignUp = () => {
       <main>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formContainer}>
-            <h1>Get in Touch</h1>
+            <h1 className='themedTitle'>Get In Touch</h1>
             {modal.shown && (
               <Modal modalText={modal.modalText} textColor={modal.textColor} />
             )}
@@ -94,10 +95,22 @@ const SignUp = () => {
                 onChange={handleChange}
               />
             </div>
+            <div className={styles.formControl}>
+              <label htmlFor='message'>Message : </label>
+              <input
+                type='text'
+                id='message'
+                style={{ padding: '20px' }}
+                name='message'
+                value={person.message}
+                onChange={handleChange}
+              />
+            </div>
             <button type='submit' className={styles.formBtn}>
               Submit
             </button>
           </div>
+          <img src='/images/contact.jpeg' width='70%' alt='Sign up Image' />
         </form>
       </main>
     </>

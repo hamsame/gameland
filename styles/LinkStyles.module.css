@@ -1,0 +1,37 @@
+/* link styles */
+/* homepage link style */
+.homepageLink {
+  text-decoration: none;
+  color: #00005f;
+}
+
+/* gamepage link styles */
+.gamepageLink {
+  text-decoration: none;
+}
+
+.flexItem {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexItemWrapped {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer {
+  width: 95%;
+  margin: 3vh auto 0;
+  padding: 1.4rem 0;
+}
+
+.footer a,
+.footer a i {
+  color: #000 !important;
+  font-weight: 2rem;
+}

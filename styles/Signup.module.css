@@ -1,8 +1,27 @@
 /* form */
 .form {
-  width: 90%;
-  margin: 20vh auto 0;
-  font-size: 1.2rem;
+  margin: 10vh auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  width: 95%;
+  font-size: 1.3rem;
+}
+
+.form img {
+  margin-top: 13vh;
+}
+
+@media (max-width: 768px) {
+  .form {
+    margin: -10vh auto;
+    padding-bottom: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .form img {
+    grid-row: 1;
+  }
 }
 
 /* div containing input and label elements */
@@ -17,7 +36,7 @@
 
 .formControl input {
   padding: 4px;
-  width: 50%;
+  width: 70%;
 }
 
 .formBtn {

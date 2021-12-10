@@ -3,7 +3,7 @@ import styled from 'styled-components'
 // games page styles
 export const Grid = styled.div`
   width: 98%;
-  margin: 0 auto;
+  margin: 5vh auto 0;
   display: grid;
   grid-template-columns: repeat(${(props) => props.cols}, auto);
   gap: 1rem;

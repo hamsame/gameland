@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import styles from '../styles/LinkStyles.module.css'
 
 import {
   InfoArticle,
@@ -21,13 +22,14 @@ export default function Home() {
         </Head>
       </div>
 
-      {/* div 1 */}
       <InfoArticle>
         <ArticleDiv>
           <h5>EXCLUSIVE ACCESS</h5>
           <ArticleH2>
             <Link href='/sign-up'>
-              <a>early access to deals for premium members</a>
+              <a className={styles.homepageLink}>
+                early access to deals for premium members
+              </a>
             </Link>
           </ArticleH2>
           <ArticleText>
@@ -39,18 +41,17 @@ export default function Home() {
           </Link>
         </ArticleDiv>
         <ArticleImage
-          src='https://images.pexels.com/photos/3905874/pexels-photo-3905874.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+          src='/images/balloons.jpeg'
           alt='Balloons indicating a sale'
         />
       </InfoArticle>
 
-      {/* div 2 */}
       <InfoArticle flexItemDirection='row-reverse'>
         <ArticleDiv>
           <h5>COMMUNITY</h5>
           <ArticleH2>
             <Link href='/sign-up'>
-              <a>PLAY & COMPETE WITH OTHERS</a>
+              <a className={styles.homepageLink}>PLAY & COMPETE WITH OTHERS</a>
             </Link>
           </ArticleH2>
           <ArticleText>
@@ -62,18 +63,17 @@ export default function Home() {
           </Link>
         </ArticleDiv>
         <ArticleImage
-          src='https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+          src='/images/controllers.jpeg'
           alt='Two people holding playstation controllers infront of a TV'
         />
       </InfoArticle>
 
-      {/* div 3 */}
       <InfoArticle>
         <ArticleDiv>
           <h5>COOL GAMES</h5>
           <ArticleH2>
             <Link href='/games'>
-              <a>Check Out Our Cool Games</a>
+              <a className={styles.homepageLink}>Check Out Our Cool Games</a>
             </Link>
           </ArticleH2>
           <ArticleText>
@@ -85,7 +85,7 @@ export default function Home() {
           </Link>
         </ArticleDiv>
         <ArticleImage
-          src='https://images.pexels.com/photos/1373100/pexels-photo-1373100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+          src='/images/classics.jpeg'
           alt='3 games- Missile Command, Pac-Man, and Defender'
         />
       </InfoArticle>

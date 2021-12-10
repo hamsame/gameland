@@ -10,8 +10,8 @@ body {
   font-weight: bold;
 }
 
-.none {
-  display: none;
+.themedTitle {
+  color: #00005f;
 }
 
 .game p {
@@ -25,22 +25,6 @@ body {
 
 .game img:hover {
   transform: scale(1.009);
-}
-
-h4,
-p {
-  color: #222;
-  margin-left: 2%;
-}
-
-.underline:hover {
-  padding-bottom: 2.5px;
-  border-bottom: 0.5px solid #222;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 * {

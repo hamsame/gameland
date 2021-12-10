@@ -31,8 +31,9 @@ export const ArticleDiv = styled.div`
 `
 
 export const ArticleH2 = styled.h2`
+  color: ${(props) => props.color || '#00005f'};
+  text-transform: ${(props) => props.casing || 'uppercase'};
   margin: 1vh 0;
-  color: #00005f;
   a:hover {
     cursor: pointer;
   }
@@ -40,9 +41,11 @@ export const ArticleH2 = styled.h2`
 
 export const ArticleText = styled.p`
   margin: 3vh auto;
+  line-height: ${(props) => props.lh || 'initial'};
 `
 
 export const ArticleLink = styled.a`
+  font-weight: bold;
   &:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -52,6 +55,6 @@ export const ArticleLink = styled.a`
 export const ArticleImage = styled.img`
   width: 50%;
   @media (max-width: 1000px) {
-    width: 60%;
+    width: 80%;
   }
 `

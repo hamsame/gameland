@@ -70,7 +70,7 @@ const GamePage = ({ game }) => {
           <br /> Available on {platform}
         </PageText>
         <Link href={'/games'}>
-          <a style={{ color: 'blue', marginLeft: '0%' }}>Go Back</a>
+          <a>Go Back</a>
         </Link>
       </article>
     </>
