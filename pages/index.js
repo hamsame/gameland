@@ -36,7 +36,7 @@ export default function Home() {
             others.
           </ArticleText>
           <Link href='/sign-up'>
-            <ArticleLink>SIGN UP</ArticleLink>
+            <a>sign up</a>
           </Link>
         </ArticleDiv>
         <ArticleImage
@@ -57,7 +57,7 @@ export default function Home() {
             sapiente.
           </ArticleText>
           <Link href='/sign-up'>
-            <ArticleLink>SIGN UP</ArticleLink>
+            <a>sign up</a>
           </Link>
         </ArticleDiv>
         <ArticleImage
@@ -78,7 +78,7 @@ export default function Home() {
             sapiente.
           </ArticleText>
           <Link href='/games'>
-            <ArticleLink>OUR GAMES</ArticleLink>
+            <a>our games</a>
           </Link>
         </ArticleDiv>
         <ArticleImage

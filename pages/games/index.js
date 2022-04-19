@@ -46,8 +46,20 @@ const Games = ({ games }) => {
       <Heading2 className='themedTitle'>All Games</Heading2>
       <div className='form-control' style={{ margin: '0 0 0 1%' }}>
         <br />
-        <label htmlFor='filter'>Search : </label>
-        <input type='text' id='filter' />
+        <label htmlFor='filter'>Search:</label>
+        <br />
+        <input
+          type='text'
+          id='filter'
+          autoComplete='off'
+          style={{
+            width: '80%',
+            margin: '2vh auto',
+            padding: '0.25rem',
+            borderRadius: '6px',
+            borderWidth: '1px',
+          }}
+        />
       </div>
       <Grid cols='3'>
         {games.slice(299, 365).map((game) => {

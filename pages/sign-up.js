@@ -57,7 +57,7 @@ const SignUp = () => {
         <meta name='description' content='Gamerland- A website for gamers' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Navbar />
+
       <main>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formContainer}>

@@ -1,3 +1,13 @@
+:root {
+  --primaryColor: navy;
+  --secondaryColor: white;
+}
+
+/* show navbar links on mobile mode */
+.showLinks {
+  display: flex !important;
+}
+
 html,
 body {
   padding: 0;

@@ -1,141 +1,41 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import {
-  Navigation,
-  NavLinks,
-  NavLink,
-  Hyperlinktag,
-  MobileNav,
-  HamburgerIcon,
-} from './styledComponents/navStyles'
+import styles from '../styles/Navbar.module.css'
+import { AppContext, useGlobalContext } from './context'
 
-const Navbar = () => {
-  const router = useRouter()
-  const [smallNav, setSmallNav] = useState(false)
-
-  const changeIcon = () => {
-    smallNav
-      ? (document.querySelector('.mobile-nav').innerHTML = '&#8801;')
-      : (document.querySelector('.mobile-nav').innerHTML = '&#x2715')
-  }
-
-  const showMobileNav = () => {
-    smallNav == false ? setSmallNav(true) : setSmallNav(false)
-    changeIcon()
-  }
-
-  const closeMobileNav = () => {
-    setSmallNav(false)
-    document.querySelector('.mobile-nav').innerHTML = '&#8801;'
-  }
-
+function Navbar() {
+  const { setSmallNav, changeNav, smallNav } = useGlobalContext()
   return (
     <>
-      <Navigation>
-        <h3>
-          <Link href='/'>
-            <Hyperlinktag>GAMERLAND</Hyperlinktag>
-          </Link>
-        </h3>
-        <NavLinks>
-          <NavLink>
-            <Link href='/about'>
-              <Hyperlinktag
-                className={router.pathname == '/about' ? 'activeLink' : ''}
-              >
-                About
-              </Hyperlinktag>
+      <nav className={styles.navbar}>
+        <div className={styles.navbarWrapper}>
+          <h1 onClick={() => setSmallNav(false)} className={styles.navTitle}>
+            <Link href='/'>
+              <a>Gamerland</a>
             </Link>
-          </NavLink>
-
-          <NavLink>
-            <Link href='/games'>
-              <Hyperlinktag
-                className={
-                  router.pathname == '/games' ||
-                  router.pathname == '/games/[id]'
-                    ? 'activeLink'
-                    : ''
-                }
-              >
-                Games
-              </Hyperlinktag>
-            </Link>
-          </NavLink>
-          <NavLink>
-            <Link href='/sign-up'>
-              <Hyperlinktag
-                className={router.pathname == '/sign-up' ? 'activeLink' : ''}
-              >
-                Join
-              </Hyperlinktag>
-            </Link>
-          </NavLink>
-        </NavLinks>
-        <HamburgerIcon
-          className='mobile-nav'
-          onClick={() => showMobileNav()}
-          style={{ fontSize: '2rem', cursor: 'pointer' }}
-        >
-          &#8801;
-        </HamburgerIcon>
-      </Navigation>
-      {/* mobile navigation (only shown when size is small) */}
-      {smallNav && (
-        <MobileNav
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            fontSize: '2rem',
-            gap: '30%',
-            alignItems: 'center',
-            marginTop: '-15vh',
-            height: '100%',
-            width: '100%',
-            background: '#00005f',
-            color: 'white',
-            zIndex: '100',
-            position: 'fixed',
-          }}
-        >
-          <ul
-            style={{
-              listStyle: 'none',
-            }}
-          >
-            <li>
-              <Link href='/'>
-                <Hyperlinktag onClick={() => closeMobileNav()}>
-                  Home
-                </Hyperlinktag>
-              </Link>
-            </li>
-            <li style={{ margin: '15vh 0' }}>
+          </h1>
+          <button onClick={changeNav}>
+            {!smallNav ? <>&#8801;</> : <>&#x2715;</>}
+          </button>
+          <ul className={smallNav ? 'showLinks' : ''}>
+            <li onClick={() => setSmallNav(false)}>
               <Link href='/about'>
-                <Hyperlinktag onClick={() => closeMobileNav()}>
-                  About
-                </Hyperlinktag>
+                <a>About</a>
               </Link>
             </li>
-            <li style={{ margin: '15vh 0' }}>
-              <Link href='/games' onClick={() => closeMobileNav()}>
-                <Hyperlinktag onClick={() => closeMobileNav()}>
-                  Games
-                </Hyperlinktag>
+            <li onClick={() => setSmallNav(false)}>
+              <Link href='/games'>
+                <a>Games</a>
               </Link>
             </li>
-            <li>
-              <Link href='/sign-up' onClick={() => closeMobileNav()}>
-                <Hyperlinktag onClick={() => closeMobileNav()}>
-                  Join
-                </Hyperlinktag>
+            <li onClick={() => setSmallNav(false)}>
+              <Link href='/sign-up'>
+                <a>Join</a>
               </Link>
             </li>
           </ul>
-        </MobileNav>
-      )}
+        </div>
+      </nav>
     </>
   )
 }
