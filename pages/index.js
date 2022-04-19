@@ -24,7 +24,6 @@ export default function Home() {
 
       <InfoArticle>
         <ArticleDiv>
-          <h5>EXCLUSIVE ACCESS</h5>
           <ArticleH2>
             <Link href='/sign-up'>
               <a className={styles.homepageLink}>
@@ -48,7 +47,6 @@ export default function Home() {
 
       <InfoArticle flexItemDirection='row-reverse'>
         <ArticleDiv>
-          <h5>COMMUNITY</h5>
           <ArticleH2>
             <Link href='/sign-up'>
               <a className={styles.homepageLink}>PLAY & COMPETE WITH OTHERS</a>
@@ -70,7 +68,6 @@ export default function Home() {
 
       <InfoArticle>
         <ArticleDiv>
-          <h5>COOL GAMES</h5>
           <ArticleH2>
             <Link href='/games'>
               <a className={styles.homepageLink}>Check Out Our Cool Games</a>
