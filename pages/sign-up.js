@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Signup.module.css'
-import Navbar from '../components/navbar'
 import { Modal } from '../components/modal'
 import React, { useState } from 'react'
 
@@ -57,7 +56,7 @@ const SignUp = () => {
         <meta name='description' content='Gamerland- A website for gamers' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Navbar />
+
       <main>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formContainer}>

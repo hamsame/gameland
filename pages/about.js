@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Navbar from '../components/navbar'
 import styled from 'styled-components'
 
 import {
@@ -24,7 +23,7 @@ const Banner = styled.div`
 const BannerDiv = styled.div`
   color: #00005f;
   width: 86%;
-  margin: 0 auto !important;
+  margin: 0 auto 2vh;
   padding: 5rem 0;
 `
 
@@ -36,7 +35,6 @@ export default function About() {
         <meta name='description' content='Gamerland- A website for gamers' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Navbar />
 
       <main>
         <Banner>

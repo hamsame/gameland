@@ -1,12 +1,15 @@
-import Navbar from './navbar'
+import React from 'react'
+import { useGlobalContext } from './context'
 import Footer from './Footer'
+import Navbar from './Navbar'
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
+  const { smallNav } = useGlobalContext()
   return (
     <>
       <Navbar />
-      <main style={{ marginTop: '15vh' }}>{children}</main>
-      <Footer />
+      {!smallNav ? <main>{children}</main> : null}
+      {!smallNav ? <Footer /> : null}
     </>
   )
 }

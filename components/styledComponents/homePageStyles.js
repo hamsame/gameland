@@ -3,9 +3,9 @@ import styled from 'styled-components'
 // homepage
 export const InfoArticle = styled.article`
 width: 90%;
-margin: 5vh auto 0vh;
+margin: 0vh auto 5vh;
 padding: 4rem 0;
-gap: 1rem;
+gap: 2rem;
 display:flex;
 justify-content: space-around;
 align-items:center;
@@ -14,6 +14,7 @@ text-transform: capitalize;
 line-height:1;
 flex-direction: ${(props) => props.flexItemDirection};
   @media (max-width: 1000px) {
+    margin: 5vh auto;
     flex-direction: column-reverse;
     align-items:flex-start;
     padding: 1rem;
@@ -45,7 +46,9 @@ export const ArticleText = styled.p`
 `
 
 export const ArticleLink = styled.a`
-  font-weight: bold;
+  color: #0000ee;
+  text-decoration: inital !important;
+  text-transformation: lowercase !important;
   &:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -55,6 +58,6 @@ export const ArticleLink = styled.a`
 export const ArticleImage = styled.img`
   width: 50%;
   @media (max-width: 1000px) {
-    width: 80%;
+    width: 100%;
   }
 `
