@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Navbar from '../components/navbar'
 import styled from 'styled-components'
 
 import {

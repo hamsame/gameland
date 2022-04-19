@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Signup.module.css'
-import Navbar from '../components/navbar'
 import { Modal } from '../components/modal'
 import React, { useState } from 'react'
 
