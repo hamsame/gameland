@@ -37,6 +37,24 @@ body {
   transform: scale(1.009);
 }
 
+.form-control {
+  margin: 0 0 0 1%;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control #filter {
+  width: 90%;
+  margin: 2vh auto;
+  padding: 4px;
+}
+
+.gamePage {
+  margin: 5%;
+}
+
 * {
   box-sizing: border-box;
 }
