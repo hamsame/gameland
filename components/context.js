@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from "react"
 
 const AppContext = React.createContext()
 
@@ -14,9 +14,13 @@ const AppProvider = ({ children }) => {
     setClick(!click)
   }
 
+  const closeNav = () => {
+    setSmallNav(false)
+  }
+
   return (
     <AppContext.Provider
-      value={{ changeClick, setSmallNav, changeNav, smallNav, click }}
+      value={{ changeClick, setSmallNav, changeNav, closeNav, smallNav, click }}
     >
       {children}
     </AppContext.Provider>
