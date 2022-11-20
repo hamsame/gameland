@@ -1,7 +1,7 @@
-import React from 'react'
-import { useGlobalContext } from './context'
-import Footer from './Footer'
-import Navbar from './Navbar'
+import React from "react"
+import { useGlobalContext } from "./context"
+import Footer from "./Footer"
+import Navbar from "./Navbar"
 
 function Layout({ children }) {
   const { smallNav } = useGlobalContext()
