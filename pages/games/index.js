@@ -1,16 +1,17 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../../styles/LinkStyles.module.css'
+import React from "react"
+import Head from "next/head"
+import Link from "next/link"
+import Image from "next/image"
+import styles from "../../styles/LinkStyles.module.css"
 
 import {
   Grid,
   Game,
   Heading2,
-} from '../../components/styledComponents/gamePageStyles'
+} from "../../components/styledComponents/gamePageStyles"
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://www.freetogame.com/api/games')
+  const res = await fetch("https://www.freetogame.com/api/games")
   const data = await res.json()
   return {
     props: { games: data },
@@ -19,14 +20,13 @@ export const getStaticProps = async () => {
 
 const filterGames = () => {
   let i = 0
-  document.querySelector('#filter').addEventListener('keyup', (e) => {
+  document.querySelector("#filter").addEventListener("keyup", (e) => {
     const filterText = e.target.value.toLowerCase()
-
-    for (i of document.querySelectorAll('.game')) {
+    for (i of document.querySelectorAll(".game")) {
       const gameName = i.children[1].firstChild.firstChild.textContent
       gameName.toLowerCase().indexOf(filterText) != -1
-        ? (i.style.display = 'block')
-        : (i.style.display = 'none')
+        ? (i.style.display = "block")
+        : (i.style.display = "none")
     }
   })
 }
@@ -38,37 +38,29 @@ const Games = ({ games }) => {
   return (
     <>
       <Head>
-        <title>Gamerland | Free Games</title>
-        <meta name='description' content='Gamerland- The place for gamers' />
-        <link rel='icon' href='/favicon.ico' />
+        <title>Gamerland | All Games</title>
+        <meta name="description" content="Gamerland- The place for gamers" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Heading2 className='themedTitle'>All Games</Heading2>
-      <div className='form-control' style={{ margin: '0 0 0 1%' }}>
-        <br />
-        <label htmlFor='filter'>Search:</label>
-        <br />
-        <input
-          type='text'
-          id='filter'
-          autoComplete='off'
-          style={{
-            width: '80%',
-            margin: '2vh auto',
-            padding: '0.25rem',
-            borderRadius: '6px',
-            borderWidth: '1px',
-          }}
-        />
+      <Heading2 className="themedTitle">All Games</Heading2>
+      <div className="form-control">
+        <label htmlFor="filter">Search:</label>
+        <input type="text" id="filter" autoComplete="off" />
       </div>
-      <Grid cols='3'>
+      <Grid cols="3">
         {games.slice(299, 365).map((game) => {
           const { id, title, thumbnail, short_description } = game
           return (
-            <Game className='game' key={id}>
+            <Game className="game" key={id}>
               <Link href={`/games/${id}`}>
                 <a>
-                  <img src={thumbnail} alt={`Image of ${title}`} />
+                  <Image
+                    width={365}
+                    height={206}
+                    src={thumbnail}
+                    alt={`Image of the game ${title}`}
+                  />
                 </a>
               </Link>
               <h4>

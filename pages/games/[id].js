@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import Head from 'next/head'
-import { PageText } from '../../components/styledComponents/gamePageStyles'
+import Link from "next/link"
+import Head from "next/head"
+import Image from "next/image"
+import { PageText } from "../../components/styledComponents/gamePageStyles"
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://www.freetogame.com/api/games')
+  const res = await fetch("https://www.freetogame.com/api/games")
   const data = await res.json()
-
   const paths = data.map((game) => {
     return {
       params: { id: game.id.toString() },
@@ -44,34 +44,38 @@ const GamePage = ({ game }) => {
     <>
       <Head>
         <title>Gamerland | {title}</title>
-        <meta name='description' content={short_description} />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name="description" content={short_description} />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <article key={id} style={{ margin: '9.5%' }}>
-        <img
-          style={{ width: '60%' }}
+      <article key={id} className="gamePage">
+        <Image
+          width={542}
+          height={306}
           src={thumbnail}
           alt={`Image of ${title} game`}
         />
-        <br />
         {screenshots.map((img) => (
-          <img
-            style={{ width: '30%', margin: '3vh 2% 0 0%' }}
+          <Image
+            width={542}
+            height={306}
             src={img.image}
             key={img.id}
             alt={`Screenshot of ${title} game`}
           />
         ))}
         <h2>
-          <a href={game_url}>{title}</a>
+          <a href={game_url} target="_blank" rel="noreferrer">
+            {title}
+          </a>
         </h2>
         <PageText>
-          {description} <br />
-          <br /> Available on {platform}
+          {description} (Available on {platform})
+          <div>
+            <Link href={"/games"}>
+              <a>Go Back</a>
+            </Link>
+          </div>
         </PageText>
-        <Link href={'/games'}>
-          <a>Go Back</a>
-        </Link>
       </article>
     </>
   )
